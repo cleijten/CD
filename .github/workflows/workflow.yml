@@ -17,25 +17,19 @@ jobs:
         run: pytest
 
   deploy:
-    needs: run-tests  
+    needs: run-tests
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Deploy to DigitalOcean
-      uses: appleboy/ssh-action@master
-      with:
-        host: 164.92.181.23
-        port: 99
-        username: root
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          cd /root/home/CD
-          git pull origin main
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            echo 'Welcome to my server'
+            cd /home/CD
+            echo 'Now in home/CD'
+            git pull
+            systemctl restart CD
