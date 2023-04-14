@@ -21,15 +21,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SSH Remote Commands
-        uses: appleboy/ssh-action@v0.1.4
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            echo 'Welcome to my server'
+            echo 'Welcome'
             cd /home/CD
-            echo 'Now in home/CD'
             git pull
             systemctl restart CD
