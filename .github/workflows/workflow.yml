@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            echo 'Welcome'
+            echo 'Welcome ...'
             cd /home/CD
             git pull
             systemctl restart CD
