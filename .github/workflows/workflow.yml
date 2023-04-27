@@ -30,7 +30,7 @@ jobs:
           script: |
             echo 'Welcome'
             cd /home/CD
-            git pull
+            git pull origin master
             systemctl restart nginx
             systemctl enable --now CD
             echo 'Deployment successfull'
