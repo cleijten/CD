@@ -4,7 +4,7 @@
 * Learn Ubuntu commands
 * Deploy Flask app
 
-## Workflow:##
+## Workflow: ##
 * Create a flask app and test 
 * Write a .yml workflow that tests the Flask app and if the test is successful connect to VPS ands show the latest version of the app
 
