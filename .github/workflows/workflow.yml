@@ -34,5 +34,4 @@ jobs:
             git pull origin master
             systemctl restart nginx
             systemctl enable --now CD
-            gunicorn main:app -b 0.0.0.0  
             echo 'Deployment successfull'
