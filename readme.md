@@ -1,5 +1,5 @@
 ## Assignment objectives: ##
-* Run a server at Digital Ocean
+* Run a server at Digital Ocean: 164.92.181.23
 * Connecting over SSH
 * Learn Ubuntu commands
 * Deploy Flask app
