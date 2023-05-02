@@ -32,6 +32,6 @@ jobs:
             cd /home/CD
             git fetch
             git pull origin master
-            systemctl restart nginx
-            systemctl enable --now CD
+            systemctl reload nginx
+            systemctl restart CD
             echo 'Deployment successfull'
